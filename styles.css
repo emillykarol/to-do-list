@@ -6,7 +6,8 @@
 
 body {
     height: 100%;
-    background-color: rgb(10, 16, 37);
+    background-color: rgb(24, 27, 37);
+    font-family: Verdana, sans-serif;
 }
 
 h1 {
@@ -15,10 +16,9 @@ h1 {
     font-weight: 50;
     text-align: center;
     margin: 1rem 0 3rem;
-    font-family: Tahoma;
 }
 .titulo {
-    color: rgb(204, 7, 0);
+    color:red;
     text-transform: uppercase;
     font-weight: 800;
 }
@@ -38,6 +38,40 @@ h1 {
     margin: 0.25rem;
     transition: .5s;
     font-size: 1.15rem;
+}
+
+
+.check-box{
+    position: absolute;
+    top: 2px;
+    appearance: none;
+    height: 25px;
+    width: 25px;
+    background-color: #bebebe;
+    border-radius: 4px;
+    /* border: 3px solid white; */
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+.check-box:checked {
+    background-color: lime; 
+}
+.check-box:checked:hover{
+    background-color: rgb(0, 225, 0); 
+
+}
+.check-box:hover{
+    background-color: #a0a0a0;
+}
+
+.check-box:checked::before {
+    content: '✔'; 
+    position: absolute;
+    left: 4px; 
+    top: -2px; 
+    color: white; 
+    font-size: 20px;
 }
 .add {
     outline: none;
@@ -68,6 +102,9 @@ h1 {
 .item {
     padding: 0.5rem;
     border-bottom: 4px solid #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
     margin-bottom: 1.5rem;
 }
 
@@ -75,7 +112,7 @@ h1 {
     background: none;
     outline: none;
     border: none;
-    color: #fff;
+    color: black;
     font-size: 1.4rem;
     width: 245px;
 }
@@ -84,9 +121,8 @@ h1 {
     background: none;
     outline: none;
     border: none;
-    color: lime;
+    color: rgb(0, 0, 0);
     font-size: 1.4rem;
-    font-family: Tahoma;
     margin: 0 0.5rem;
     cursor: pointer;
 }
@@ -95,8 +131,7 @@ h1 {
     background: none;
     outline: none;
     border: none;
-    color: rgb(208, 228, 33);
+    color: red;
     font-size: 1.4rem;
-    font-family: Tahoma;
     cursor: pointer;
 }
