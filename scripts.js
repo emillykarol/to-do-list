@@ -58,15 +58,42 @@ function addTarefa(nome) {
     }
 }
 
+// function editTarefa(input, tarefa) {
+//     input.disabled = !input.disabled
+
+//     if (!input.disabled) {
+//         const index = todos.indexOf(tarefa)
+
+
+//         todos[index] = input.value
+//         salvarTarefas()
+//     }
+// }
+
 function editTarefa(input, tarefa) {
     input.disabled = !input.disabled
 
     if (!input.disabled) {
         const index = todos.indexOf(tarefa)
-        todos[index] = input.value
+
+        input.addEventListener('blur', () => {
+            const newValue = input.value.trim()
+            //recebe o novo valor (e usa trim pra remover espaços em branco)
+            if (newValue !== '') {
+                todos[index] = newValue
+                //se o novo valor nao for vazio, atualiza o item correspondente ao tipo e salva as alterações
+                salvarTarefas()
+            } else {
+                input.value = tarefa
+            }
+            input.disabled = false
+            //desabilita o campo
+        });
         salvarTarefas()
+        input.focus()  //garante o foco no input do item
     }
 }
+
 
 function removeTarefa(itemBox, tarefa) {
     container.removeChild(itemBox)
@@ -87,5 +114,4 @@ input.addEventListener('keydown', (e) => {
     }
 })
 
-// inicializacao da lista que esta no localStorage
 todos.forEach(task => createTarefa(task));
