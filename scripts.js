@@ -58,17 +58,6 @@ function addTarefa(nome) {
     }
 }
 
-// function editTarefa(input, tarefa) {
-//     input.disabled = !input.disabled
-
-//     if (!input.disabled) {
-//         const index = todos.indexOf(tarefa)
-
-
-//         todos[index] = input.value
-//         salvarTarefas()
-//     }
-// }
 
 function editTarefa(input, tarefa) {
     input.disabled = !input.disabled
